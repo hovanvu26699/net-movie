@@ -1,0 +1,132 @@
+.movieDetail-container {
+    background-color: #070d10;
+    color: white;
+
+    .movieDetail-content {
+        padding: 50px;
+        // background: gray;
+        width: 70%;
+        display: flex;
+        margin: auto;
+
+        .box-img {
+            max-width: 340px;
+            max-height: 510px;
+            width: 100%;
+            height: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 6px;
+            }
+        }
+
+        .describe {
+            padding: 0 20px;
+
+            .name-movie {
+                h1 {
+                    font-size: 60px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .btn-movie {
+                margin-bottom: 10px;
+
+                .btn-trailer {
+                    font-size: 17px;
+                    color: white;
+                    padding: 10px 15px;
+                    background: rgba(18, 18, 231, 0.837);
+                    border: none;
+                    border-radius: 6px;
+                    margin-right: 5px;
+                    transition: all 0.3s linear;
+                    transform: scale(1);
+
+                    &:hover {
+                        background: rgb(0, 0, 169);
+                        cursor: pointer;
+                        font-weight: 500;
+                        transform: scale(1.05);
+                    }
+                }
+
+                .btn-watch {
+                    font-size: 17px;
+                    color: white;
+                    padding: 10px 15px;
+                    background: rgb(236, 15, 15);
+                    border: none;
+                    border-radius: 6px;
+                    transition: all 0.3s ease;
+                    transform: scale(1);
+
+                    &:hover {
+                        background: rgb(190, 0, 0);
+                        cursor: pointer;
+                        font-weight: 500;
+                        transform: scale(1.05);
+
+                    }
+                }
+
+            }
+
+            .detail {
+                ul {
+                    li {
+                        list-style-type: none;
+                        margin-bottom: 10px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.trailer-movie {
+    padding-top: 30px;
+    padding-bottom: 100px;
+    border-top: 1px solid red;
+    width: 50%;
+    margin: auto;
+    position: relative;
+
+    h1 {
+        margin-bottom: 20px;
+        font-weight: 500;
+        color: red;
+    }
+
+    .videoIntro {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        height: 400px;
+
+        .videoIntro-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.suggest {
+    margin-bottom: 10px;
+
+    .suggest-container {
+        width: 75%;
+        color: red;
+        margin: auto;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+}

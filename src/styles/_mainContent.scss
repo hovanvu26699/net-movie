@@ -1,0 +1,10 @@
+.mainContent {
+    display: flex;
+    background: #1A1A1A;
+    // column-gap: 20px;
+
+    .contentRight {
+        flex: none;
+        // width: 90%;
+    }
+}

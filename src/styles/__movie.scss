@@ -1,0 +1,58 @@
+.movie-container {
+    background: #1A1A1A;
+    color: white;
+    padding: 20px 0 20px 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: red;
+    }
+
+    .movie-list {
+        display: grid;
+        grid-template-columns: repeat(5, 200px);
+        gap: 20px;
+
+
+        .movie-item {
+            max-width: 200px;
+            max-height: 280px;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            transform: scale(1);
+            transition: all 0.2s linear;
+
+
+            &:hover {
+                transform: scale(1.05);
+                opacity: 1.5;
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .movie-name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 4px;
+                text-align: start;
+                font-size: 16px;
+                background: rgba($color: #000000, $alpha: 0.7);
+            }
+        }
+    }
+}
