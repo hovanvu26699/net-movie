@@ -4,7 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Movie from "../components/contents/Movie";
 import ReactPlayer from "react-player";
-import { BrowserRouter as Router } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+
+} from "react-router-dom";
 
 const dataMovie = [
     {
@@ -74,6 +77,7 @@ const MovieDetail = () => {
         <div className="movieDetail-container">
             <div className="movieDetail-header">
                 <Header />
+
             </div>
             <div className="movieDetail-navbar">
                 <Router>

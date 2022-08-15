@@ -3,7 +3,7 @@ import React from "react";
 import MovieDetail from "./views/MovieDetail"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import SignIn from "./views/SignIn";
+import SignIn from "./views/SignIn";
 const App = () => {
   return (
     <div>

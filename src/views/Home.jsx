@@ -6,6 +6,7 @@ import Intro from "../components/Intro/Intro";
 // import Content from "../components/contents/Content";
 import { BrowserRouter as Router } from "react-router-dom";
 import MainContent from "../components/MainContent";
+import SignIn from "./SignIn";
 
 const Home = () => {
   return (
