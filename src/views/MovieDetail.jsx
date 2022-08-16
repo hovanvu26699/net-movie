@@ -138,7 +138,7 @@ const MovieDetail = () => {
                 <div className="suggest-container">
                     <h1>CÓ THỂ BẠN CŨNG MUỐN XEM</h1>
                     <div className="suggest-content">
-                        <Movie />
+                        <Movie movie={dataMovie} />
                     </div>
 
                 </div>

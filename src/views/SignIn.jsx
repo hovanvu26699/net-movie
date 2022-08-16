@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
+import { Link } from "react-router-dom"
 
 const SignIn = () => {
   return (
@@ -30,7 +30,7 @@ const SignIn = () => {
               <span className="help">Need help?</span>
             </div>
             <div className="moreInfo">
-              <span>New to Netflix? <a>Sign up now</a>.</span>
+              <span>New to Netflix? <Link to="/signUp">Sign up now</Link>.</span>
               <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a>Learn more.</a> </p>
             </div>
           </form>

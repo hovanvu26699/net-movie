@@ -15,9 +15,7 @@ const Home = () => {
         <Header />
       </div>
       <div className="navbar">
-        <Router>
-          <Navbar />
-        </Router>
+        <Navbar />
       </div>
       <div className="intro">
         <Intro />

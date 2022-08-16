@@ -1,21 +1,24 @@
-.header-container{
+.header-container {
     padding: 0 50px;
     margin: auto;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .logo-search{
+
+    .logo-search {
         display: flex;
         align-items: center;
-        .logo{
-            img{
+
+        .logo {
+            img {
                 width: 200px;
                 height: 70px;
             }
         }
-        .search{
-            input{
+
+        .search {
+            input {
                 width: 310px;
                 padding: 5px 10px 5px 34px;
                 font-size: 15px;
@@ -25,7 +28,8 @@
                 background: #2F3441;
                 color: white;
             }
-            i{
+
+            i {
                 font-size: 15px;
                 padding: 5px;
                 color: rgb(172, 172, 172);
@@ -36,8 +40,9 @@
             }
         }
     }
-    .header-btn{
-        button{
+
+    .header-btn {
+        button {
             font-size: 16px;
             color: #FFFBF8;
             padding: 8px 12px;
@@ -45,6 +50,14 @@
             font-weight: 600;
             border-radius: 6px;
             margin-left: 10px;
+            transform: scale(1);
+            transition: all 0.2s linear;
+
+            &:hover {
+                cursor: pointer;
+                // background: #ca000a;
+                transform: scale(1.1);
+            }
         }
     }
 }

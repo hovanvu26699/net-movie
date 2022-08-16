@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 
 
@@ -8,7 +9,7 @@ const Header = () => {
     <div className="header-container">
       <div className="logo-search">
         <div className="logo">
-          <img src={logo} alt="" />
+          <Link to="/"> <img src={logo} alt="" /></Link>
         </div>
         <div className="search">
           <i className="fa-solid fa-magnifying-glass"></i>
@@ -16,8 +17,8 @@ const Header = () => {
         </div>
       </div>
       <div className="header-btn">
-        <button>Sign In</button>
-        <button>Sign Up</button>
+        <Link to="/signIn"><button>Sign In</button></Link>
+        <Link to="/signUp"> <button>Sign Up</button></Link>
       </div>
     </div>
   );
