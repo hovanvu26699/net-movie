@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 const SignIn = () => {
   return (
     <div className="signIn-container">
-      <div>
+      {/* <div>
         <Header />
-      </div>
+      </div> */}
       <div className="signIn-form">
         <div className="form-content">
           <form>
@@ -37,10 +37,10 @@ const SignIn = () => {
         </div>
 
       </div>
-      <div>
+      {/* <div>
         <Footer />
 
-      </div>
+      </div> */}
     </div>
   );
 };

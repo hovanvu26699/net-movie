@@ -11,21 +11,21 @@ import SignIn from "./SignIn";
 const Home = () => {
   return (
     <>
-      <div className="header">
+      {/* <div className="header">
         <Header />
       </div>
       <div className="navbar">
         <Navbar />
-      </div>
+      </div> */}
       <div className="intro">
         <Intro />
       </div>
       <div className="main-content">
         <MainContent />
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

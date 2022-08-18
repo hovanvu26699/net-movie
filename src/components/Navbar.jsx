@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const menuItems = [
   {
     title: "TRANG CHỦ",
-    cName: "menu-item home",
+    cName: "menu-item home selected",
+    path: "/"
   },
   {
     title: "THỂ LOẠI",
+    path: "/",
     id: "type",
     cName: "menu-item type",
     Icon: (
@@ -32,7 +34,7 @@ const menuItems = [
   },
   {
     title: "QUỐC GIA",
-    id: "country",
+    path: '/',
     cName: "menu-item country",
     Icon: (
       <ArrowDropDownIcon data-testid="ArrowDropDownIcon"></ArrowDropDownIcon>
@@ -51,23 +53,30 @@ const menuItems = [
   },
   {
     title: "PHIM MỚI ",
+    path: '/',
     cName: "menu-item new",
   },
   {
     title: "PHIM BỘ ",
+    path: '/',
     cName: "menu-item series",
   },
   {
     title: "PHIM LẺ ",
+    path: '/',
     cName: "menu-item single",
-  },
-  {
-    title: "PHIM CHIẾU RẠP ",
-    cName: "menu-item cinema",
   },
   {
     title: "PHIM SẮP CHIẾU ",
     cName: "menu-item upcoming",
+    path: '/',
+
+  },
+  {
+    title: "TV Shows ",
+    cName: "menu-item tvShow",
+    path: '/tv',
+
   },
 ];
 const Navbar = () => {
@@ -102,10 +111,10 @@ const Navbar = () => {
                   item.id === "type" ? onMouseLeaveType : onMouseLeaveCountry
                 }
               >
-                <Link to="/">
+                <NavLink to={item.path} >
                   {item.title}
                   {item.Icon}
-                </Link>
+                </NavLink>
                 {(item.id === "type" ? dropdownType : dropdownCountry) && (
                   <Dropdown menuDropdown={item.subMenu} />
                 )}
@@ -114,10 +123,10 @@ const Navbar = () => {
           } else {
             return (
               <li className={item.cName} key={index}>
-                <Link to="/">
+                <NavLink to={item.path} >
                   {item.title}
                   {item.Icon}
-                </Link>
+                </NavLink>
               </li>
             );
           }

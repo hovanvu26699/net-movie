@@ -1,9 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Header from "../components/Header"
-import Navbar from '../components/Navbar'
 import OneMovie from '../components/contents/OneMovie'
+
 
 const dataMovie = [
     {
@@ -67,36 +64,21 @@ const dataMovie = [
         rate: "5.5",
     },
 ];
-const NewMovie = () => {
+const Category = () => {
     return (
-        <>
-            {/* <div className='header'>
-                <Header />
+        <div className='mainMovie'>
+            <h1>TV Shows</h1>
+            <div className='listMovie'>
+                {
+                    dataMovie.map((movie, index) => {
+                        return (
+                            <OneMovie id={movie.id} img={movie.img} name={movie.name} />
+                        )
+                    })
+                }
             </div>
-            <div className='navbar'>
-                <Router>
-                    <Navbar />
-                </Router>
-            </div> */}
-
-            <div className='mainMovie'>
-                <h1>PHIM MỚI</h1>
-                <div className='listMovie'>
-                    {
-                        dataMovie.map((movie, index) => {
-                            return (
-                                <OneMovie id={movie.id} img={movie.img} name={movie.name} />
-                            )
-                        })
-                    }
-                </div>
-            </div>
-            {/* <div className='footer'>
-                <Footer />
-            </div> */}
-        </>
-
+        </div>
     )
 }
 
-export default NewMovie
+export default Category

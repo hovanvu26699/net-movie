@@ -1,20 +1,26 @@
 import React from "react";
 import Home from "./views/Home";
-import MovieDetail from "./views/MovieDetail"
-import NewMovie from "./views/NewMovie";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SignIn from "./views/SignIn";
-import SignUp from "./views/SignUp"
-import { Outlet } from "react-router-dom";
+import Routess from "./routes/Routess";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+// import 'swiper/swpiper.min.css';
+import { BrowserRouter, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
 
 
 const App = () => {
   return (
     <div>
-      <Outlet>
-        <Home />
-      </Outlet>
+      <BrowserRouter>
+        <Header />
+        <Navbar />
+        <Outlet />
+        <Routess />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };

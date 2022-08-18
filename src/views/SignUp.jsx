@@ -6,9 +6,9 @@ import Header from "../components/Header";
 
 const SignUp = () => {
   return <div className="signUp-container">
-    <div>
+    {/* <div>
       <Header />
-    </div>
+    </div> */}
     <div className="signUp-form">
       <div className="form-content">
         <form>
@@ -38,9 +38,9 @@ const SignUp = () => {
         </form>
       </div>
     </div>
-    <div>
+    {/* <div>
       <Footer />
-    </div>
+    </div> */}
   </div>;
 };
 
