@@ -4,16 +4,17 @@ import Home from "../views/Home";
 import MovieDetail from "../views/MovieDetail";
 import SignIn from "../views/SignIn";
 import SignUp from '../views/SignUp';
-import Category from "../views/Category";
+import Catalog from "../views/Catalog";
 
 const Routess = () => {
   return (
     <Routes>
-      <Route path="/:category/search/:keyword" element={<Category />} />
-      <Route path="/:category" element={<Category />} />
+      <Route path="/:category/search/:keyword" element={<Catalog />} />
+      <Route path="/:category" element={<Catalog />} />
       <Route path="/signIn" element={<SignIn />} />
       <Route path="/signUp" element={<SignUp />} />
       <Route path="/:category/:id" element={<MovieDetail />} />
+      <Route path="/detail" element={<MovieDetail />} />
       <Route index element={<Home />} />
     </Routes>
   );

@@ -8,6 +8,7 @@ import Header from "./components/Header";
 // import 'swiper/swpiper.min.css';
 import { BrowserRouter, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import 'swiper/swiper.min.css';
 
 
 

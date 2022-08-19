@@ -2,7 +2,8 @@ import React from "react";
 import Movie from "./contents/Movie";
 import Right from "./contents/Right";
 
-import SlideMovie from "./contents/SlideMovie";
+import MovieSlide from "../components/movieSlide/MovieSlide";
+import { category, movieType, tvType } from "../components/api/tmdbApi";
 
 const dataMovie = [
   {
@@ -70,11 +71,11 @@ const dataMovie = [
 const MainContent = () => {
   return (
     <div className="mainContent-conntainer">
-      <div className="bestMovie">
-        <SlideMovie title="PHIM ĐỀ CỬ" />
+      <div className="section-trend">
+        <MovieSlide title="TRENDING" category={category.movie} type={movieType.popular} />
       </div>
-      <div className="newMovie">
-        <SlideMovie title="PHIM MỚI" />
+      <div className="section-topRate">
+        <MovieSlide title="TOP RATED MOVIE" category={category.movie} type={movieType.top_rated} />
       </div>
       <div className="mainContent">
         <div className="mainRight">

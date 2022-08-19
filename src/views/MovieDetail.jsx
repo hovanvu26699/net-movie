@@ -75,15 +75,13 @@ const dataMovie = [
 const MovieDetail = () => {
     return (
         <div className="movieDetail-container">
-            <div className="movieDetail-header">
+            {/* <div className="movieDetail-header">
                 <Header />
 
             </div>
             <div className="movieDetail-navbar">
-                <Router>
-                    <Navbar />
-                </Router>
-            </div>
+                <Navbar />
+            </div> */}
 
             <div className="movieDetail-content">
                 <div className="box-img">
@@ -143,9 +141,9 @@ const MovieDetail = () => {
 
                 </div>
             </div>
-            <div className="movieDetail-navbar">
+            {/* <div className="movieDetail-navbar">
                 <Footer />
-            </div>
+            </div> */}
         </div>
     );
 };

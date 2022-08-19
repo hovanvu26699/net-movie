@@ -53,23 +53,23 @@ const menuItems = [
   },
   {
     title: "PHIM MỚI ",
-    path: '/',
+    path: '/movie',
     cName: "menu-item new",
   },
   {
     title: "PHIM BỘ ",
-    path: '/',
+    path: '/movie',
     cName: "menu-item series",
   },
   {
     title: "PHIM LẺ ",
-    path: '/',
+    path: '/movie',
     cName: "menu-item single",
   },
   {
     title: "PHIM SẮP CHIẾU ",
     cName: "menu-item upcoming",
-    path: '/',
+    path: '/movie',
 
   },
   {
