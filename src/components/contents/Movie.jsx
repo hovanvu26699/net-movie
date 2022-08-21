@@ -1,21 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../../styles/__movie.scss";
-import MovieDetail from "../../views/MovieDetail"
+import tmdbApi, { category } from "../api/tmdbApi";
+import apiConfig from "../api/apiConfig";
 
 const Movie = (props) => {
-  const movieData = props.movie
+
+  const [items, setItem] = useState([])
+
+  useEffect(() => {
+    const getList = async () => {
+      let response = null;
+      const params = {}
+      if (props.type !== 'similar') {
+        switch (props.category) {
+          case category.movie:
+            response = await tmdbApi.getMovieList(props.type, { params });
+            break;
+          default:
+            response = await tmdbApi.getTvList(props.type, { params })
+        }
+      } else {
+        response = await tmdbApi.similar(props.category, props.id)
+      }
+      setItem(response.results)
+    }
+    getList();
+  }, [])
   return (
     <div className="movie-container">
-      <h1>{props.title}</h1>
       <div className="movie-list">
-        {movieData.map((movie, index) => {
+        {items.map((movie, index) => {
           return (
-            <div key={movie.id} className="movie-item">
-              <Link to='/detail'>
-                <img src={movie.img} alt="" />
+            <div key={index} className="movie-item">
+              <Link to="/detail">
+                <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
               </Link>
-              <div className="movie-name">{movie.name}</div>
+              <div className="movie-name">{movie.name || movie.title}</div>
             </div>
           );
         })}
@@ -23,5 +45,10 @@ const Movie = (props) => {
     </div>
   );
 };
+
+Movie.propTypes = {
+  category: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+}
 
 export default Movie;

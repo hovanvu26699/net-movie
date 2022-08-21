@@ -18,6 +18,8 @@
         }
 
         .search {
+            display: flex;
+
             input {
                 width: 310px;
                 padding: 5px 10px 5px 34px;
@@ -36,7 +38,8 @@
                 // background: #2F3441;
                 position: relative;
                 right: -32px;
-                top: 1px;
+                top: 5px;
+
             }
         }
     }
