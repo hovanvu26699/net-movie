@@ -1,88 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/__right.scss";
+import { Link } from "react-router-dom";
+import apiConfig from "../api/apiConfig";
+import tmdbApi, { category } from "../api/tmdbApi";
+import PropTypes from "prop-types";
 
-const dataMovie = [
-    {
-        id: "1",
-        img: "https://st.quantrimang.com/photos/image/2020/11/06/top-movie-netflix-2.jpg",
-        name: "Enola Hoimes",
-        rate: "5.5",
-    },
-    {
-        id: "2",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_sieusaosieungo768x1139.jpg",
-        name: "Siêu Sao Siêu Ngố",
-        rate: "7.3",
-    },
-    {
-        id: "3",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_emlabanoicuaanh768x1094.jpg",
-        name: "Em Là Bà Nội Của Anh",
-        rate: "8.7",
-    },
-    {
-        id: "4",
-        img: "https://st.quantrimang.com/photos/image/2020/11/06/top-movie-netflix-2.jpg",
-        name: "Enola Hoimes",
-        rate: "5.5",
-    },
-    {
-        id: "5",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_sieusaosieungo768x1139.jpg",
-        name: "Siêu Sao Siêu Ngố",
-        rate: "7.3",
-    },
-    {
-        id: "6",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_emlabanoicuaanh768x1094.jpg",
-        name: "Em Là Bà Nội Của Anh",
-        rate: "8.7",
-    },
-    {
-        id: "7",
-        img: "https://st.quantrimang.com/photos/image/2020/11/06/top-movie-netflix-2.jpg",
-        name: "Enola Hoimes",
-        rate: "5.5",
-    },
-    {
-        id: "8",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_sieusaosieungo768x1139.jpg",
-        name: "Siêu Sao Siêu Ngố",
-        rate: "7.3",
-    },
-    {
-        id: "9",
-        img: "https://cdnimg.vietnamplus.vn/uploaded/hotnnz/2018_04_10/dol_emlabanoicuaanh768x1094.jpg",
-        name: "Em Là Bà Nội Của Anh",
-        rate: "8.7",
-    },
-    {
-        id: "10",
-        img: "https://st.quantrimang.com/photos/image/2020/11/06/top-movie-netflix-2.jpg",
-        name: "Enola Hoimes",
-        rate: "5.5",
-    },
-];
 
-const Right = () => {
+
+const Right = (props) => {
+
+    const [items, setItem] = useState([])
+
+    useEffect(() => {
+        const getList = async () => {
+            let response = null
+            const params = {}
+            if (props.type !== 'similar') {
+                switch (props.category) {
+                    case category.movie:
+                        response = await tmdbApi.getMovieList(props.type, { params });
+                        break;
+                    default:
+                        response = await tmdbApi.getTvList(props.type, { params })
+                }
+            } else {
+                response = await tmdbApi.similar(props.category, props.id)
+            }
+            setItem(response.results)
+        }
+        getList();
+    }, [])
+
     return (
         <div className="right">
-            <h1>PHIM HOT</h1>
+            <h1>{props.title}</h1>
             <div className="right-movie-list">
-
-                {dataMovie.map((movie, index) => {
+                {console.log(items)}
+                {items.map((movie, index) => {
                     return (
-                        <div key={movie.id} className="right-movie-item">
+                        <div key={index} className="right-movie-item">
                             <div className="box-img">
-                                <img src={movie.img} alt="" />
+                                <Link to="/detail">
+                                    <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
+                                </Link>
                             </div>
                             <div className="right-movie-name">
                                 <h6>
-                                    {movie.name}
+                                    {movie.name || movie.title}
                                 </h6>
                                 <p>
-                                    In Vacanza Su Marte
+                                    {movie.original_name || movie.title}
                                 </p>
+
                             </div>
                         </div>
                     );
@@ -92,5 +61,10 @@ const Right = () => {
         </div>
     );
 };
+
+Right.propTypes = {
+    category: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
+}
 
 export default Right;

@@ -90,7 +90,7 @@ const MainContent = () => {
                 <div className="mainLeft">
                     <div className="trendMovie">
                         <div className="headingTitle">
-                            <h2>TRENDING MOVIE</h2>
+                            <h2>UPCOMING MOVIE</h2>
                             <div className="btn-view">
                                 <Link to="/movie">
                                     <button>View more</button>
@@ -99,7 +99,6 @@ const MainContent = () => {
                         </div>
                         <Movie
                             className="mainMovie"
-                            title="PHIM CHIẾU RẠP"
                             category={category.movie}
                             type={movieType.upcoming}
                         />
@@ -115,14 +114,13 @@ const MainContent = () => {
                         </div>
                         <Movie
                             className="mainMovie"
-                            title="PHIM CHIẾU RẠP"
                             category={category.movie}
                             type={movieType.popular}
                         />
                     </div>
                     <div className="seriesMovie">
                         <div className="headingTitle">
-                            <h2>TRENDING MOVIE</h2>
+                            <h2>TOP RATE TV SHOWS</h2>
                             <div className="btn-view">
                                 <Link to="/movie">
                                     <button>View more</button>
@@ -131,15 +129,14 @@ const MainContent = () => {
                         </div>
                         <Movie
                             className="mainMovie"
-                            title="PHIM CHIẾU RẠP"
                             category={category.tv}
                             type={tvType.top_rated}
                         />
                     </div>
                 </div>
                 <div className="contentRight">
-                    <Right />
-                    <Right />
+                    <Right title="POPULAR MOVIE" category={category.movie} type={movieType.popular} />
+                    <Right title="POPULAR TV SHOWS" category={category.tv} type={tvType.popular} />
                 </div>
             </div>
         </div>

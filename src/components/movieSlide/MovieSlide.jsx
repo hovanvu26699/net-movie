@@ -12,7 +12,6 @@ import MovieCard from '../movieCard/MovieCard';
 
 const MovieSlide = (props) => {
     const [items, setItems] = useState([])
-    console.log(props)
     useEffect(() => {
         const getList = async () => {
             let response = null
@@ -35,12 +34,11 @@ const MovieSlide = (props) => {
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 3
     };
     return (
         <div className='movie-list'>
-            {console.log(items)}
             <h2> {props.title} </h2>
             <Slider {...settings} className="slide">
                 {
