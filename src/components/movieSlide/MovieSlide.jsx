@@ -12,10 +12,12 @@ import MovieCard from '../movieCard/MovieCard';
 
 const MovieSlide = (props) => {
     const [items, setItems] = useState([])
+
     useEffect(() => {
         const getList = async () => {
             let response = null
             const params = {};
+            console.log(props.id)
             if (props.type !== 'similar') {
                 switch (props.category) {
                     case category.movie:

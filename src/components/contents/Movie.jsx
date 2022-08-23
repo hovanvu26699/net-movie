@@ -28,21 +28,25 @@ const Movie = (props) => {
     }
     getList();
   }, [])
+  const link = '/' + category[props.category] + '/';
   return (
     <div className="movie-container">
-      <div className="movie-list">
-        {items.map((movie, index) => {
-          return (
-            <div key={index} className="movie-item">
-              <Link to="/detail">
-                <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
-              </Link>
-              <div className="movie-name">{movie.name || movie.title}</div>
-            </div>
-          );
-        })}
-      </div>
+      <div className="movie-list" >
+        {
+          items.map((movie, index) => {
+            return (
+              <div key={index} className="movie-item">
+                <Link to={`${link + movie.id}`} >
+                  <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
+                </Link>
+                <div className="movie-name">{movie.name || movie.title}</div>
+              </div>
+            );
+          })
+        }
+      </div >
     </div>
+
   );
 };
 

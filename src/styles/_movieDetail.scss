@@ -17,13 +17,13 @@
 
             img {
                 height: 100%;
-                width: 100%;
+                width: 300px;
                 border-radius: 6px;
             }
         }
 
         .describe {
-            padding: 0 20px;
+            padding: 0 10px;
 
             .name-movie {
                 h1 {
@@ -82,51 +82,80 @@
                         margin-bottom: 10px;
                         font-size: 17px;
                     }
+
                 }
+            }
+
+        }
+    }
+
+    .listCast {
+        padding: 30px 100px 60px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 20px;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+
+        .castMovie {
+            div {
+                padding: 10px;
+
+                img {
+                    width: 100%;
+                    border: 1px solid rgb(150, 150, 150);
+                    border-radius: 5px;
+                }
+            }
+
+
+            span {
+                font-size: 18px;
             }
         }
     }
-}
 
-.trailer-movie {
-    padding-top: 30px;
-    padding-bottom: 100px;
-    border-top: 1px solid red;
-    width: 50%;
-    margin: auto;
-    position: relative;
-
-    h1 {
-        margin-bottom: 20px;
-        font-weight: 500;
-        color: red;
-    }
-
-    .videoIntro {
-        border-radius: 15px;
-        overflow: hidden;
-        position: relative;
-        height: 400px;
-
-        .videoIntro-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    }
-}
-
-.suggest {
-    padding-bottom: 50px;
-
-    .suggest-container {
-        width: 75%;
-        color: red;
+    .trailer-movie {
+        padding-top: 30px;
+        padding-bottom: 100px;
+        border-top: 1px solid red;
+        width: 50%;
         margin: auto;
+        position: relative;
 
         h1 {
-            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: red;
+        }
+
+        .videoIntro {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+
+            .videoIntro-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
     }
 
+    .suggest {
+        padding-bottom: 50px;
+
+        .suggest-container {
+            width: 75%;
+            color: red;
+            margin: auto;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+    }
 }
