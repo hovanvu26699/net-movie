@@ -30,17 +30,16 @@ const Right = (props) => {
         }
         getList();
     }, [])
-
+    const link = '/' + category[props.category] + '/';
     return (
         <div className="right">
             <h1>{props.title}</h1>
             <div className="right-movie-list">
-                {console.log(items)}
                 {items.map((movie, index) => {
                     return (
                         <div key={index} className="right-movie-item">
                             <div className="box-img">
-                                <Link to="/detail">
+                                <Link to={`${link + movie.id}`}>
                                     <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
                                 </Link>
                             </div>

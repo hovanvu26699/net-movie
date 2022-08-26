@@ -27,6 +27,7 @@
                 margin-bottom: 30px;
             }
 
+
             .inputUser {
                 width: 100%;
                 line-height: 28px;
@@ -36,8 +37,19 @@
                 color: white;
                 border: none;
                 outline: none;
-                margin-bottom: 20px;
                 border-radius: 7px;
+                margin-top: 20px;
+            }
+
+            .error {
+                color: red;
+                padding-left: 10px;
+            }
+
+            .textLogin {
+                p {
+                    margin-top: 20px;
+                }
             }
 
             .textLogin {
