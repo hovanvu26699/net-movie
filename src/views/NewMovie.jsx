@@ -1,8 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Footer from '../components/Footer'
-import Header from "../components/Header"
-import Navbar from '../components/Navbar'
 import OneMovie from '../components/contents/OneMovie'
 
 const dataMovie = [
@@ -70,15 +67,6 @@ const dataMovie = [
 const NewMovie = () => {
     return (
         <>
-            {/* <div className='header'>
-                <Header />
-            </div>
-            <div className='navbar'>
-                <Router>
-                    <Navbar />
-                </Router>
-            </div> */}
-
             <div className='mainMovie'>
                 <h1>PHIM MỚI</h1>
                 <div className='listMovie'>
@@ -91,9 +79,6 @@ const NewMovie = () => {
                     }
                 </div>
             </div>
-            {/* <div className='footer'>
-                <Footer />
-            </div> */}
         </>
 
     )

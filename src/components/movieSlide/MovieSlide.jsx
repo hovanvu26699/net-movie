@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import './movieSlide.scss'
-
 import Slider from "react-slick";
-
-import { Link } from 'react-router-dom'
-
 import tmdbApi, { category } from '../api/tmdbApi';
-import apiConfig from '../api/apiConfig';
 import MovieCard from '../movieCard/MovieCard';
 
 const MovieSlide = (props) => {
