@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import { category } from '../components/api/tmdbApi'
+import { useParams, useNavigate } from 'react-router-dom'
+
+import MenuIcon from '@mui/icons-material/Menu';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Input from "./input/Input";
+
 
 const menuItems = [
   {
@@ -80,8 +87,11 @@ const menuItems = [
   },
 ];
 const Navbar = () => {
+  const { keyword } = useParams();
+
   const [dropdownType, setDropdownType] = useState(false);
   const [dropdownCountry, setDropdownCountry] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   const onMouseEnterType = () => {
     setDropdownType(true);
@@ -95,9 +105,36 @@ const Navbar = () => {
   const onMouseLeaveCountry = () => {
     setDropdownCountry(false);
   };
+  // useEffect(() => {
+  //   const upsize = () => {
+  //     if (window.innerWidth >= 1024) {
+  //       setIsMobile(false)
+  //     } else {
+  //       setIsMobile(true)
+
+  //     }
+  //   }
+  //   window.addEventListener('resize', upsize);
+  //   upsize()
+  //   return () => window.removeEventListener('resize', upsize);
+
+  // }, [])
+
+
   return (
     <div className="navbar-container">
-      <ul className="navbar-main-menu">
+      <div className="icon-res">
+        <label for="nav-mobile-input" className="toggle" onClick={() => setIsMobile(!isMobile)}>
+          <MenuIcon className="menu-icon" />
+        </label>
+        <input type="checkbox" name="" id="nav-mobile-input" className="nav-input"></input>
+        <div className="nav-user">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <MoreVertIcon />
+        </div>
+      </div>
+
+      <ul className={isMobile ? "navar-res" : "navbar-main-menu"} onresize>
         {menuItems.map((item, index) => {
           if (item.Icon !== undefined) {
             return (
@@ -132,8 +169,50 @@ const Navbar = () => {
           }
         })}
       </ul>
+
+      <div className="search" id="search">
+        <i className="fa-solid fa-magnifying-glass"></i>
+        <div className="nav-search">
+          <MovieSearch category={category.movie} keyword={keyword} />
+        </div>
+      </div>
     </div>
   );
 };
 
+
+const MovieSearch = props => {
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '')
+
+  const gotoSearch = useCallback(() => {
+    if (keyword.trim().length > 0) {
+      console.log("aaaaaaaaaaaaaaaaaaaa")
+      navigate(`${category[props.category]}/search/${keyword}`);
+      console.log(`${category[props.category]}/search/${keyword}`)
+    }
+  }, [keyword, props.category, navigate])
+
+  useEffect(() => {
+    const enterEvent = (e) => {
+      e.preventDefault();
+      if (e.keyCode === 13) {
+        gotoSearch()
+      }
+    }
+    document.addEventListener('keyup', enterEvent);
+    return () => {
+      document.removeEventListener('keyup', enterEvent)
+    }
+  }, [keyword, gotoSearch])
+
+  return (
+    <Input
+      type='text'
+      placeholder='Search ...'
+      value={keyword}
+      onChange={(e) => setKeyword(e.target.value)}
+    />
+  )
+}
 export default Navbar;

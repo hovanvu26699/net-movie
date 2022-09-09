@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { category } from '../components/api/tmdbApi'
 import { useParams, useNavigate } from 'react-router-dom'
-
 import Input from "./input/Input";
 
 

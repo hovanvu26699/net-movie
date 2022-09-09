@@ -58,9 +58,35 @@
 
             &:hover {
                 cursor: pointer;
-                // background: #ca000a;
                 transform: scale(1.1);
             }
         }
     }
+
+    @media screen and (max-width:1024px) {
+        padding: 0 10px;
+
+        .logo-search {
+            .logo {
+                img {
+                    width: 150px;
+                    // height: 70px;
+                }
+            }
+
+            .search {
+                display: none;
+            }
+        }
+
+        .header-btn {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:739px) {
+        justify-content: center;
+    }
+
+    @media screen and (max-width:1023px) and (min-width:740px) {}
 }
