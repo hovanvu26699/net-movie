@@ -4,7 +4,6 @@
 
     .movieDetail-content {
         padding: 50px;
-        // background: gray;
         width: 70%;
         display: flex;
         margin: auto;
@@ -16,6 +15,9 @@
             height: 100%;
 
             img {
+                display: block;
+                margin: auto;
+
                 height: 100%;
                 width: 300px;
                 border-radius: 6px;
@@ -134,7 +136,7 @@
             border-radius: 15px;
             overflow: hidden;
             position: relative;
-            height: 400px;
+            height: 500px;
 
             .videoIntro-content {
                 position: absolute;
@@ -148,7 +150,7 @@
         padding-bottom: 50px;
 
         .suggest-container {
-            width: 75%;
+            width: 80%;
             color: red;
             margin: auto;
 
@@ -157,5 +159,172 @@
             }
         }
 
+    }
+
+    // responsive
+    @media screen and (max-width:739px) {
+        .movieDetail-content {
+            padding: 25px 0px;
+            width: 90%;
+
+            .box-img {
+                img {
+                    width: 200px;
+                }
+            }
+
+            .describe {
+                padding: 0 0 0 20px;
+
+                .name-movie {
+                    h1 {
+                        font-size: 30px;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .btn-movie {
+
+                    .btn-watch,
+                    .btn-trailer {
+                        padding: 5px 10px;
+                        font-size: 16px;
+                    }
+                }
+
+                .detail {
+                    ul {
+                        li {
+                            font-size: 16px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .listCast {
+            padding: 20px 0px 30px;
+            column-gap: 10px;
+            width: 90%;
+
+            .castMovie {
+                div {
+                    padding: 0px;
+                }
+
+
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .trailer-movie {
+            width: 95%;
+            padding-bottom: 30px;
+
+            .videoIntro {
+                height: 300px;
+                width: 100%;
+            }
+        }
+
+        .suggest {
+            padding-bottom: 0px;
+
+            .suggest-container {
+                width: 100%;
+                color: red;
+                margin: auto;
+
+                h1 {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
+    }
+
+    @media screen and (max-width:1024px) and (min-width:740px) {
+        .movieDetail-content {
+            padding: 25px 0px;
+            width: 90%;
+
+            .box-img {
+                img {
+                    width: 280px;
+                }
+            }
+
+            .describe {
+                padding: 0 0 0 20px;
+
+                .name-movie {
+                    h1 {
+                        font-size: 50px;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .detail {
+                    ul {
+                        li {
+                            font-size: 16px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .listCast {
+            padding: 30px 10px 60px;
+            column-gap: 10px;
+
+            .castMovie {
+                div {
+                    padding: 0px;
+
+                    // img {
+                    //     width: 100%;
+                    //     border: 1px solid rgb(150, 150, 150);
+                    //     border-radius: 5px;
+                    // }
+                }
+
+
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .trailer-movie {
+            width: 700px;
+            padding-bottom: 30px;
+
+            .videoIntro {
+                height: 400px;
+                width: 100%;
+            }
+        }
+
+        .suggest {
+            padding-bottom: 0px;
+
+            .suggest-container {
+                width: 100%;
+                color: red;
+                margin: auto;
+
+                h1 {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
     }
 }

@@ -127,10 +127,16 @@ const Navbar = () => {
         <label for="nav-mobile-input" className="toggle" onClick={() => setIsMobile(!isMobile)}>
           <MenuIcon className="menu-icon" />
         </label>
-        <input type="checkbox" name="" id="nav-mobile-input" className="nav-input"></input>
+
         <div className="nav-user">
-          <i className="fa-solid fa-magnifying-glass"></i>
-          <MoreVertIcon />
+          {/* <i className="fa-solid fa-magnifying-glass"></i> */}
+          <div className="dropdown-log">
+            <MoreVertIcon />
+            <div className="drop-log-content">
+              <Link to="/signIn">  Sign In </Link>
+              <Link to="/signUp">  Sign Up </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -170,7 +176,7 @@ const Navbar = () => {
         })}
       </ul>
 
-      <div className="search" id="search">
+      <div className="search">
         <i className="fa-solid fa-magnifying-glass"></i>
         <div className="nav-search">
           <MovieSearch category={category.movie} keyword={keyword} />

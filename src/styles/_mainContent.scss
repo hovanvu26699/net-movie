@@ -1,6 +1,7 @@
 .mainContent {
     display: flex;
     background: #1A1A1A;
+    justify-content: center;
 
     // column-gap: 20px;
     .mainLeft {
@@ -38,4 +39,48 @@
         flex: none;
         // width: 90%;
     }
+
+    // @media screen and (max-width:1024px) {
+    //     .mainLeft {
+    //         .headingTitle {
+    //             h2 {
+    //                 font-size: 25px;
+    //             }
+    //         }
+    //     }
+
+    //     .contentRight {
+    //         flex: none;
+    //         display: none;
+    //         // width: 90%;
+    //     }
+    // }
+
+    // @media screen and (max-width:600px) {
+    //     .mainLeft {
+    //         .headingTitle {
+    //             h2 {
+    //                 font-size: 20px;
+    //             }
+    //         }
+    //     }
+
+    //     .contentRight {
+    //         flex: none;
+    //         // display: none;
+    //         // width: 90%;
+    //     }
+    // }
+
+    // @media screen and (max-width:1023px) and (min-width:740px) {
+    //     .mainLeft {
+    //         .headingTitle {
+    //             padding: 10px 20px 0px;
+
+    //             h2 {
+    //                 font-size: 20px;
+    //             }
+    //         }
+    //     }
+    // }
 }

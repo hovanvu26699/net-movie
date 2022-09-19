@@ -1,54 +1,74 @@
-.intro-container{
+.intro-container {
     background: black;
     padding-top: 56%;
     color: white;
     position: relative;
 
-    .videoIntro{
+    .videoIntro {
         position: absolute;
         top: 0;
         left: 0;
     }
-    .info-Intro{
+
+    .info-Intro {
         position: absolute;
         top: 200px;
         left: 30px;
+
+        @media screen and (max-width:1024px) {
+            top: 100px;
+        }
+
         @media screen and (max-width:800px) {
-            top:120px;
+            top: 100px;
             left: 25px;
         }
+
         @media screen and (max-width:600px) {
-            top:100px;
+            top: 100px;
             left: 15px;
         }
 
-        .heading-Intro{
+        .heading-Intro {
             font-size: 60px;
             transition: all 0.3s ease;
-            @media screen and (max-width:800px) {
+
+            @media screen and (max-width:1024px) {
                 font-size: 40px;
+
             }
+
+            @media screen and (max-width:800px) {
+                font-size: 30px;
+            }
+
             @media screen and (max-width:600px) {
-                font-size: 24px;
+                // font-size: 20px;
+                display: none;
             }
         }
 
-        .overview-Intro{
+        .overview-Intro {
             max-width: 550px;
             width: 100%;
             line-height: 1.3;
             padding-top: 25px;
             font-size: 18px;
+
             @media screen and (max-width:800px) {
-                font-size: 16px;
-            }
-            @media screen and (max-width:600px) {
                 font-size: 14px;
+                max-width: 450px;
+
+            }
+
+            @media screen and (max-width:600px) {
+                // font-size: 14px;
+                display: none;
             }
         }
     }
 
-    .btnVolume{
+    .btnVolume {
         position: absolute;
         height: 40px;
         width: 40px;
@@ -62,16 +82,19 @@
 
         transition: all 0.3 ease;
         transform: scale(1);
-        &:hover{
+
+        &:hover {
             color: #fff;
             transform: scale(1.2);
             background-color: rgba(238, 238, 238, 0.137);
         }
+
         @media screen and (max-width:800px) {
             height: 30px;
             width: 30px;
             padding: 4px;
         }
+
         @media screen and (max-width:600px) {
             height: 20px;
             width: 20px;
@@ -79,11 +102,20 @@
         }
     }
 
-    .fadeBottom{
+    .fadeBottom {
         position: absolute;
-        bottom: 0;
+        bottom: 0px;
         width: 100%;
         height: 180px;
-        background-image: linear-gradient(180deg,transparent,rgba(15,15,15,0.6) 40%,rgb(17,17,17),rgb(17,17,17));
+        background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1) 40%, rgb(18, 18, 18), rgb(26, 26, 26));
+
+        // @media screen and (max-width:800px) {
+        //     height: 180px;
+        // }
+
+        @media screen and (max-width:600px) {
+            height: 150px;
+
+        }
     }
 }

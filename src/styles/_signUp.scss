@@ -15,7 +15,7 @@
         color: white;
 
         form {
-            width: 32%;
+            width: 450px;
             background: rgba(0, 0, 0, 0.777);
             margin: auto;
             padding: 40px 60px 40px 60px;
@@ -79,6 +79,25 @@
                     cursor: pointer;
                     background: rgb(159, 0, 0);
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width:739px) {
+        .form-content {
+            form {
+                width: 400px;
+                padding: 30px 40px 10px 40px;
+
+                h2 {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                }
+
+                .inputUser {
+                    font-size: 14px;
+                }
+
             }
         }
     }

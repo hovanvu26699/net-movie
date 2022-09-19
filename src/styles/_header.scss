@@ -88,5 +88,15 @@
         justify-content: center;
     }
 
-    @media screen and (max-width:1023px) and (min-width:740px) {}
+    @media screen and (max-width:1023px) and (min-width:740px) {
+        justify-content: center;
+
+        .logo-search {
+            .logo {
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    }
 }

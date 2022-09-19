@@ -2,7 +2,7 @@
     width: 100%;
     z-index: 10;
     height: fit-content;
-    padding: 0 100px;
+    padding: 0 140px;
     background: rgb(11, 11, 11);
 
     .navbar-main-menu {
@@ -66,13 +66,57 @@
             font-weight: 100;
             display: none;
 
-            i {
-                font-size: 18px;
-                cursor: pointer;
-                transition: all 0.2s linear;
+            .search-place {
+                i {
+                    &:hover {
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+            }
 
-                &:hover {
-                    color: red;
+            .dropdown-log {
+                position: relative;
+                display: inline-block;
+
+                &:hover .drop-log-content {
+                    display: block;
+                }
+
+                i {
+                    font-size: 18px;
+                    cursor: pointer;
+                    transition: all 0.2s linear;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+
+                .drop-log-content {
+                    display: none;
+                    position: absolute;
+                    right: -10px;
+                    top: 100%;
+
+                    background-color: #181818;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 10;
+
+                    a {
+                        color: rgb(171, 171, 171);
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                        font-weight: 500;
+                        font-size: 18px;
+
+                        &:hover {
+                            background-color: #37373749;
+                            color: red;
+                        }
+                    }
                 }
             }
 
@@ -86,18 +130,9 @@
                     color: red;
                 }
             }
+
         }
 
-        .nav-input {
-            display: none;
-        }
-
-        // .nav-input:checked~.navar-res {
-        //     transform: translateX(0%);
-        //     border-top: 1px solid rgba(225, 225, 225, 0.541);
-        //     padding: 10px 0;
-        //     height: auto;
-        // }
 
     }
 
@@ -183,7 +218,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.467);
 
             .toggle {
                 display: block;
@@ -203,9 +237,5 @@
             display: flex;
         }
     }
-
-    // @media screen and (min-width:1025px) {}
-
-    // @media screen and (min-width:1024px) {}
 
 }
